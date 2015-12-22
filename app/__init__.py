@@ -9,17 +9,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello World!'
+    return 'reporting_on_date/ \n date_for_symbol/ \n current_quote/'
 
 
 @app.route('/reporting_on_date/<date_string>')
 def reports_for_date(date_string):
     try:
         date_object = magicdate(date_string)
-    except Exception, e:
+        output_list = parser.earnings_reports_on_date(date_object)
+        return jsonify(earnings_reports=output_list)
+    except:
+        print('Could not parse date')
         return jsonify(earning_events=None)
-    output_list = parser.earnings_reports_on_date(date_object)
-    return jsonify(earning_events=output_list)
 
 
 @app.route('/date_for_symbol/<symbol>')
