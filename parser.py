@@ -2,8 +2,7 @@ import urllib2
 from datetime import date
 from bs4 import BeautifulSoup
 
-
-def earnings_report_for_date(date_object=date.today()):
+def earnings_reports_on_date(date_object=date.today()):
 
     date_string = str(date_object.year) + str(date_object.month).zfill(2) + str(date_object.day).zfill(2)
     url_sting = 'http://biz.yahoo.com/research/earncal/' + date_string + '.html'
@@ -33,3 +32,6 @@ def earnings_report_for_date(date_object=date.today()):
                         }
             output_list.append(tmp_dict)
     return output_list
+
+def earnings_report_date_for_symbol(symbol=""):
+    return None

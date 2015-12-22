@@ -1,4 +1,1 @@
-- Install pyenv
-- Install pyenv-virtualenv
-- Create virtual env
-- Activate virtual env
+Things and stuff.
