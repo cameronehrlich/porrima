@@ -28,7 +28,7 @@ Examples:
                  exchange: NASDAQ
               price_close: -0.10
                price_last: 701.96
-      price_last_datetime: Dec 14, 4:00PM EST
+      price_last_datetime: Dec 14, 4:00PM EST````
           price_last_time: 4:00PM EST
                source_url: http://www.google.com/finance/info?q=GOOG
                    symbol: GOOG
@@ -53,7 +53,8 @@ import csv
 import dateutil.parser
 import json
 import optparse
-import urllib, urllib2
+import urllib
+import urllib2
 
 
 CODES_YAHOO = {
@@ -347,7 +348,6 @@ GOOGLE_EXCHANGES = {
 }
 
 
-
 def from_google(symbol):
     if symbol.startswith("."):
         symbol = REUTERS_TO_GOOGLE.get(symbol, symbol)
@@ -486,7 +486,6 @@ def get(symbol, start_date=None, end_date=None):
         quotes.append(from_google(symbol))
 
     return quotes
-
 
 
 
