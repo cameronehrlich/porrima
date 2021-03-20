@@ -1,6 +1,6 @@
 beautifulsoup4==4.4.1
 Flask==0.10.1
-gunicorn==19.4.1
+gunicorn==19.5.0
 itsdangerous==0.24
 Jinja2==2.8
 magicdate==0.1.3
